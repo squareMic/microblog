@@ -16,4 +16,18 @@ def index():
 #         <h1>Hello, ''' + user['username'] + '''!</h1>
 #     </body>
 # </html>'''
-    return render_template('index.html', title='Home', user=user)
+    posts = [
+        {
+            'author': {'username': 'John'},
+            'body': {'Beautiful day in Portland!'}
+        },
+        {
+            'author': {'username': 'Susan'},
+            'body': {'The Avengers movie was so cool!'}
+        },
+        {
+            'author': {'username': 'squaremic'},
+            'body': {'This blog kiks a**!'}
+        }
+    ]
+    return render_template('index.html', title='Home', user=user, posts=posts)
